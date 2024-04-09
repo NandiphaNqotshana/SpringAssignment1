@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Spring application</title>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses</title>
+    <title>Course Information</title>
 </head>
 <body>
-<h1>Foundation Courses</h1>
-<ul>
-    <li>csc111f</li>
-    <li>csc121f</li>
-    <li>csc113f</li>
-    <li>csc123f</li>
-</ul>
+<h1>Course Information</h1>
 
-<h1>Undergraduate Courses</h1>
-<ul>
-    <li>csc211</li>
-    <li>csc212</li>
-    <li>csc223</li>
-    <li>csc224</li>
-</ul>
+<h2>Foundation Courses</h2>
+<p id="foundationCourses"></p>
 
-<h1>Honours Courses</h1>
-<ul>
-    <li>csc541</li>
-    <li>csc532</li>
-    <li>csc544</li>
-    <li>csc535</li>
-</ul>
+<h2>Undergraduate Courses</h2>
+<p id="undergraduateCourses"></p>
 
-<p>Go <a href="http://localhost:8080/">back</a>.</p>
+<h2>Honours Courses</h2>
+<p id="honoursCourses"></p>
+
+<script>
+    // Define the base URL for your Spring Boot backend
+    const baseUrl = 'http://localhost:8080';
+
+    // Fetch data from the Spring Boot backend for each course category
+    fetch(${baseUrl}/courses/foundation)
+        .then(response => response.text())
+        .then(data => document.getElementById('foundationCourses').innerText = data);
+
+    fetch(${baseUrl}/courses/undergraduate)
+        .then(response => response.text())
+        .then(data => document.getElementById('undergraduateCourses').innerText = data);
+
+    fetch(${baseUrl}/courses/honours)
+        .then(response => response.text())
+        .then(data => document.getElementById('honoursCourses').innerText = data);
+</script>
 </body>
 </html>
