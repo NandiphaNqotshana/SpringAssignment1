@@ -1,4 +1,3 @@
-
 package com.example.springbootassingment;
 
 
@@ -16,18 +15,18 @@ public class SpringBootAssignmentApplication {
     }
 
     @GetMapping("foundationCourses")
-    public String getCourses(@RequestParam(value = "foundation", defaultValue = "csc111f,csc121f,csc113f,csc123f") String courses) {
+    public String getCourses(@RequestParam(value = "foundation", defaultValue = "Computer literacy for science,elementary computer programming) String courses) {
         return new String("foundation,courses");
     }
 
 
     @GetMapping("undergraduateCourses")
-    public String getUndergraduateCourses(@RequestParam(value = "undergraduate", defaultValue = "csc211,csc212,csc223,csc224") String courses) {
+    public String getUndergraduateCourses(@RequestParam(value = "undergraduate", defaultValue = "Advanced Programming,Computer Architecture and Organisation,Database Management Design,Data structures and algorithm") String courses) {
         return new String("undergraduate,courses");
     }
 
     @GetMapping("honoursCourses")
-    public String getHonoursCourses(@RequestParam(value = "honours", defaultValue = "csc541,csc532,csc544,csc535") String courses) {
+    public String getHonoursCourses(@RequestParam(value = "honours", defaultValue = "Distribution and Parllel Computing,Advanced Java,Intellijent Systems,Computer Grapgics") String courses) {
         return new String("honours,courses");
     }
 }
